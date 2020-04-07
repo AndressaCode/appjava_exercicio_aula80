@@ -35,7 +35,7 @@ public class Program {
         System.out.print("Enter account number: ");
         int accountNumber = sc.nextInt();
         
-       sc.nextLine();
+        sc.nextLine();
         
         System.out.print("Enter account holder: ");
         String accountName = sc.nextLine();
@@ -65,5 +65,7 @@ public class Program {
         value = sc.nextDouble();
         account.withdraw(value);
         System.out.printf("Updated account data: %n" + account);
+        
+        sc.close();
     }
 }
