@@ -37,13 +37,16 @@ public class Account {
         this.accountName = accountName;
     }
     
+    public double getAmount(){
+        return amount;
+    }
+    
     public void depositValue(double value){
         this.amount += value;
     }
     
     public void withdraw(double value){
-        //value = value - 5;
-        this.amount = amount - value - 5;
+        this.amount += value + 5;
     }
     
     public String toString(){
