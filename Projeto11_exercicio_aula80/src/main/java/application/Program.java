@@ -54,14 +54,16 @@ public class Program {
             System.out.printf("Account data: %n" + account);
         }
         
+        System.out.printf("%n%n");
         System.out.print("Enter a deposit value: ");
         double value = sc.nextDouble();
         account.depositValue(value);
-        System.out.print("Updated account data: " + account);
+        System.out.printf("Updated account data: %n" + account);
         
+        System.out.printf("%n%n");
         System.out.print("Enter a withdraw value: ");
         value = sc.nextDouble();
         account.withdraw(value);
-        System.out.print("Updated data: " + account);
+        System.out.print("Updated account data: %n" + account);
     }
 }
