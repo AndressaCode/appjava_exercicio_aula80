@@ -2,7 +2,7 @@
  * Enter account number: 8532
  * Enter account holder: Alex Green
  * Is there initial deposit? (y/n):  y
- * Enter initial deposito value: 500.00
+ * Enter initial deposit value: 500.00
 
  * Account data:
  * Account 8532, Holder: Alex Green, Balance: $ 500.00
@@ -35,26 +35,33 @@ public class Program {
         System.out.print("Enter account number: ");
         int accountNumber = sc.nextInt();
         
+       sc.nextLine();
+        
         System.out.print("Enter account holder: ");
-        String name = sc.nextLine();
+        String accountName = sc.nextLine();
         
-        Account account = new Account(accountNumber, name);
-        
-        System.out.println("Is there initial deposit? (Y/N)");
+        System.out.print("Is there an initial deposit? (y/n): ");
         char answer = sc.next().charAt(0);
         
-        if((answer == 'Y') || (answer == 'y')){
+        Account account = new Account(accountNumber, accountName);
+        
+        if(answer == 'y' || answer == 'Y'){
             System.out.print("Enter initial deposit value: ");
-            double deposit = sc.nextDouble();
-            account.depositAmount(deposit);
+            double value = sc.nextDouble();
+            account.depositValue(value);
+            System.out.printf("Account data: %n" + account);
+        } else {
+            System.out.printf("Account data: %n" + account);
         }
         
-        sc.close();
+        System.out.print("Enter a deposit value: ");
+        double value = sc.nextDouble();
+        account.depositValue(value);
+        System.out.print("Updated account data: " + account);
         
-        System.out.println("Account data: " + account);
+        System.out.print("Enter a withdraw value: ");
+        value = sc.nextDouble();
+        account.withdraw(value);
+        System.out.print("Updated data: " + account);
     }
-    
-    
-    
-    
 }

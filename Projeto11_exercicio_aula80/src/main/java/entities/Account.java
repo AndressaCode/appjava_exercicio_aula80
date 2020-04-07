@@ -11,42 +11,46 @@ package entities;
  * @author andressa-est
  */
 public class Account {
+   
+    private int accountNumber;
+    private String accountName;
+    private double amount;
     
-    private int number;
-    private String name;
-    private double saldo;
     
     public Account(){
     }
     
-    public Account(int number, String name){
-    
-        this.number = number;
-        this.name = name;
+    public Account(int accountNumber, String accountName){
+        this.accountName = accountName;
+        this.accountNumber = accountNumber;
     }
     
-    public int getNumber(){
-        return number;
+    public int getAccountNumber(){
+        return accountNumber;
     }
     
-    public String getName(){
-        return name;
+    public String getAccountName(){
+        return accountName;
     }
     
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    public void setAccountName(String accountName){
+        this.accountName = accountName;
     }
     
-    public double depositAmount(double value){
-        return saldo += value;
+    public void depositValue(double value){
+        this.amount += value;
     }
-   
+    
+    public void withdraw(double value){
+        this.amount -= value;
+    }
+    
+    public String toString(){
+        return "Account "  
+                + accountNumber 
+                + ", Holder: " 
+                + accountName
+                + ", Balance: $"
+                + String.format("%.2f", amount);
+    }
 }
