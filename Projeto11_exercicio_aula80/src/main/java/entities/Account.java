@@ -42,7 +42,8 @@ public class Account {
     }
     
     public void withdraw(double value){
-        this.amount -= value;
+        //value = value - 5;
+        this.amount = amount - value - 5;
     }
     
     public String toString(){
@@ -50,7 +51,7 @@ public class Account {
                 + accountNumber 
                 + ", Holder: " 
                 + accountName
-                + ", Balance: $"
+                + ", Balance: $ "
                 + String.format("%.2f", amount);
     }
 }

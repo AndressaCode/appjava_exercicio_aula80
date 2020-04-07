@@ -49,9 +49,9 @@ public class Program {
             System.out.print("Enter initial deposit value: ");
             double value = sc.nextDouble();
             account.depositValue(value);
-            System.out.printf("Account data: %n" + account);
+            System.out.printf("%nAccount data: %n" + account);
         } else {
-            System.out.printf("Account data: %n" + account);
+            System.out.printf("%nAccount data: %n" + account);
         }
         
         System.out.printf("%n%n");
@@ -64,6 +64,6 @@ public class Program {
         System.out.print("Enter a withdraw value: ");
         value = sc.nextDouble();
         account.withdraw(value);
-        System.out.print("Updated account data: %n" + account);
+        System.out.printf("Updated account data: %n" + account);
     }
 }
